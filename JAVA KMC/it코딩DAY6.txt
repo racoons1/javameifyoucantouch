@@ -1,0 +1,740 @@
+http://cafe.daum.net/gardenpro
+http://cafe.daum.net/gardenpro/leTr/7
+
+
+변수
+- 데이터 저장
+1. 이름이 다 달라야 한다
+2. 변수앞에 무엇을 저장할지 데이터 유형을 꼭 써줘야 한다
+
+int n1, n2, n3, n4, ......, n10;
+int n1, n2, ....................., n100;
+배열
+
+new는 복사의 의미
+int[] n = new int[100]; ---> 100개가 한꺼번에 다 만들어짐
+인텍스(위치값을 가지고 구분을 하게 된다) index 로 각 변수를 구분
+0번부터 시작
+n = 100;
+n[0] = 100; (0을 넣으면 첫번째 라는 뜻)
+n[1] = 200;
+n[99] = 900;
+
+control n 
+java project
+control n 
+pac
+control n
+class ---> 할때 public static void main에 체크해줘야 함
+이름은 처음글자는 대문자가 되어야 함
+
+//컨트롤+스페이스바. => 자동완성기능임
+System.out.println("test");
+//컨트롤+f11 => 실행기능임
+//컨트롤 + 화면 커짐
+//컨트롤 shift f 
+
+데이타저장 방법
+기초형-정수(int), 실수(double), char, boolean => 값
+나머지는 참조형 : 배열, 클래스,...... => 주소가 들어간다
+
+저장하는 단축키는 control s
+
+control art 화살표하면 복사됨 , art만하고 이동하면 이동됨
+for문은 반복되므로 ; 으로 끝나지 않고 무엇을 반복할지를 { } 안에 작성해 줘야함
+system.out.println(); 하면 엔터키와 같은 효과
+system.out.print 하면(ln을 빼면) 옆으로 나옴 
+
+length는 길이라고 읽지만 갯수란 의미임 만드는 놈이 length라는 용어를 만들어 버려서 헷갈리게 함
+
+
+
+package array;
+
+import java.util.Scanner;
+
+public class Movie {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] seat = new int[10];
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+
+			System.out.println("----------------------");
+			for (int i = 0; i < seat.length; i++) {
+				System.out.print(i + 1 + " ");
+			}
+			System.out.println();
+			System.out.println("----------------------");
+			for (int i = 0; i < seat.length; i++) {
+				System.out.print(seat[i] + " ");
+
+			}
+
+			System.out.println();
+			System.out.println("예매하고 싶은 좌석번호를 입력하시오");
+			System.out.print("종료는 0을 입력하세요");
+
+			System.out.println("좌석번호>> ");
+			int number = sc.nextInt();
+			if (number == 0) {
+				System.out.println("프로그램이 종료됩니다.");
+				break;
+			}
+			if (seat[number - 1] == 0) {
+				System.out.println("예매 가능한 자리입니다.");
+				System.out.println("예매를 진행합니다.");
+				seat[number - 1] = 1;
+				System.out.println("예매 완료되었습니다.");
+			} else {
+				System.out.println("예매 불가능한 자리입니다.");
+				System.out.println("다른 좌석을 입력해 주세요.");
+			}
+		}
+	}
+}
+
+
+
+
+package array;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Dog {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame f = new JFrame();
+		f.setSize(600, 600);
+		JLabel l = new JLabel();
+		ImageIcon icon = new ImageIcon("Dog.jpg");
+		l.setIcon(icon);
+		f.add(l);
+		f.setVisible(true);
+
+	}
+
+}
+
+
+Day4 ---------------------------------------------------------------------------------
+
+자바는 부품조립식이다. 각각의 부품을 클래스라 한다.
+
+패키지는 폴더라고 보면 됨
+
+class 함수가 작동하려면 항상 main에 체크해야함
+main의 {   } 에 다 들어가야 실행됨
+
+안드로이드는 한가지 실행하는데 코드가 엄청 많이 필요... 그래서 직접 코드를 코딩하는건
+어렵다. 컨트롤 스페이스바 / 컨트롤 알트 화살표 아래로
+
+그림복사할때는 day4를 클릭하고 붙여넣기 해야 함 src나 window 누르면 안됨
+
+세부적인 기능을 사용하고 싶을때는 점을 찍어서 부슨 기능이 있는지 보고 사용 괄호안은 입력값
+
+add를 두번하면 add는 가운데로만 넣어주기 때문에 label 나의 강아지 글자는 강아지 사진 밑에 
+들어가서 안보인다.
+따라서 기본적인 배치로는 안돼고 다른 부품이 필요하다.
+
+자바의 그래픽 기술은 3개 
+AWT(예전) -> Swing(우리연습) -> JavaFX(현재)
+Button         Jbutoon 
+
+listener는 기다리는 애
+
+static이 붙으면 static 밖에 있는애들도 static이라고 붙여줘야 한다.
+if 문 사용방법
+implements ActionListener 사용 / 마우스 오른쪽하면 끝에도 생김
+
+src /window 아래 Mypicture.java를 마우스로 window로 끌고가면 복사되어 Mypicture2가 생김
+
+override의 의미 method의 원래 기능을 재정의해서 쓴다는 뜻
+
+eclips 용량 크게 하기 1024 기준으로 x 몇 배해서 크게하면 됨
+eclips 설정에 톱니바퀴 있는거에서 마우스오른쪽 연결하기 메모장 열어서 
+바꾸고 저장하면 됨 
+
+
+static 만들어 두면 편하긴 하지만 계속 연동되므로 메모리를 잡아먹는다
+따라서 그렇게 좋은 방법은 아니다.
+좋은 방법은 implements에서 
+
+package window;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Mypicture implements ActionListener {
+	
+	static JButton b1;
+	static JButton b2;
+
+	public static void main(String[] args) {
+		JFrame f = new JFrame();
+		f.setTitle("나의 그래픽 프로그램");
+		f.setSize(600, 620);
+		
+		JLabel l = new JLabel("나의 강아지");
+		JLabel l3 = new JLabel("나의 호랑이");		
+		JLabel img = new JLabel();
+		ImageIcon icon = new ImageIcon("Dog.jpg");
+		FlowLayout flow = new FlowLayout();
+		f.setLayout(flow);
+		img.setIcon(icon);
+		
+		b1 = new JButton("나를 누르세요");
+		b2 = new JButton("나를 계속 누르세요");
+		
+				
+		f.add(l);
+		f.add(img);
+		f.add(l3);
+		f.add(b1);
+		f.add(b2);
+				
+		Mypicture pic = new Mypicture();
+		b1.addActionListener(pic);
+		b2.addActionListener(pic);
+				
+		f.setVisible(true);
+							
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == b1) {
+			System.out.println("나를 눌렀군요");		
+		}
+		if (e.getSource() == b2) {
+			System.out.println("나를 계속 누르세요");		
+		}
+		
+	}
+
+}
+
+
+package window;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Mypicture2 implements ActionListener {
+	
+	static JButton b1;
+	static JButton b2;
+	static JLabel img;
+
+	
+	public static void main(String[] args) {
+		JFrame f = new JFrame();
+		f.setTitle("나의 그래픽 프로그램");
+		f.setSize(600, 620);
+		
+		JLabel l = new JLabel("호랑이");
+		JLabel l3 = new JLabel("강아지");		
+		img = new JLabel();
+		ImageIcon icon = new ImageIcon("Dog.jpg");
+		FlowLayout flow = new FlowLayout();
+		f.setLayout(flow);
+		img.setIcon(icon);
+		
+		b1 = new JButton("호랑이로");
+		b2 = new JButton("강아지로");
+		
+				
+		f.add(l);
+		f.add(img);
+		f.add(l3);
+		f.add(b1);
+		f.add(b2);
+				
+		Mypicture2 pic = new Mypicture2();
+		b1.addActionListener(pic);
+		b2.addActionListener(pic);
+				
+		f.setVisible(true);
+							
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == b1) {
+			ImageIcon icon2 = new ImageIcon("Tiger.jpg");
+			img.setIcon(icon2);
+		}
+		if (e.getSource() == b2) {
+			ImageIcon icon1 = new ImageIcon("Dog.jpg");
+			img.setIcon(icon1);
+			
+		}
+		
+	}
+
+}
+
+
+package window;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Mypicture2 implements ActionListener {
+	
+	static JButton b1;
+	static JButton b2;
+	static JLabel img;
+
+	
+	public static void main(String[] args) {
+		JFrame f = new JFrame();
+		f.setTitle("나의 그래픽 프로그램");
+		f.setSize(600, 620);
+		
+		JLabel l = new JLabel("호랑이");
+		JLabel l3 = new JLabel("강아지");		
+		img = new JLabel();
+		ImageIcon icon = new ImageIcon("Dog.jpg");
+		FlowLayout flow = new FlowLayout();
+		f.setLayout(flow);
+		img.setIcon(icon);
+		
+		b1 = new JButton("호랑이로");
+		b2 = new JButton("강아지로");
+		
+				
+		f.add(l);
+		f.add(img);
+		f.add(l3);
+		f.add(b1);
+		f.add(b2);
+				
+		Mypicture2 pic = new Mypicture2();
+		b1.addActionListener(pic);
+		b2.addActionListener(pic);
+				
+		f.setVisible(true);
+							
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == b1) {
+			ImageIcon icon2 = new ImageIcon("Tiger.jpg");
+			img.setIcon(icon2);
+		}
+		if (e.getSource() == b2) {
+			ImageIcon icon1 = new ImageIcon("Dog.jpg");
+			img.setIcon(icon1);
+			
+		}
+		
+	}
+
+}
+
+
+package window;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class MyCalculate2 implements ActionListener {
+	
+	static JLabel l1, l2;
+	static JTextField t1, t2;
+	static JButton plus;
+	static JButton minus;
+	static JButton mul;
+	static JButton div;
+		
+	public static void main(String[] args) {
+		JFrame f = new JFrame();
+		f.setTitle("나의 계산기");
+		f.setSize(235, 300);
+		
+		l1 = new JLabel("숫자1>>");
+		l2 = new JLabel("숫자2>>");
+		
+		t1 = new JTextField(10);
+		t2 = new JTextField(10);
+		
+		plus = new JButton("<<<<<더하기>>>>>");
+		minus = new JButton("<<<<<빼빼기>>>>>");
+		mul = new JButton("<<<<<곱하기>>>>>");
+		div = new JButton("<<<<<나누기>>>>>");
+		
+		
+		FlowLayout flow = new FlowLayout();
+		f.setLayout(flow);
+		
+		f.add(l1);
+		f.add(t1);
+		f.add(l2);
+		f.add(t2);
+		f.add(plus);
+		f.add(minus);
+		f.add(mul);
+		f.add(div);
+		
+		MyCalculate2 cal = new MyCalculate2();
+		plus.addActionListener(cal);
+		minus.addActionListener(cal);
+		mul.addActionListener(cal);
+		div.addActionListener(cal);
+		
+
+		f.setVisible(true);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String n1 = t1.getText();
+		String n2 = t2.getText();
+	
+		int num1 = Integer.parseInt(n1);
+		int num2 = Integer.parseInt(n2);
+		
+		if(e.getSource()== plus) {
+		System.out.println("두수의 합은" + (num1 + num2));
+		}
+		if(e.getSource()== minus) {
+			System.out.println("두수의 차는" + (num1 - num2));
+		}
+		if(e.getSource()== mul) {
+			System.out.println("두수의 곱은" + (num1 * num2));
+		}
+		if(e.getSource()== div) {
+			System.out.println("두수의 나눗셈은" + (num1 / num2));
+		}
+		
+		
+	}
+
+}
+
+
+
+package window;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Game implements ActionListener{
+
+	JButton s, r, p;
+	JFrame f;
+			
+	public Game() {
+		f = new JFrame();
+		f.setTitle("나의 가위바위보");
+		f.setSize(500, 1000);
+		
+		s = new JButton();
+		r = new JButton();
+		p = new JButton();
+		
+		ImageIcon icon1 = new ImageIcon("S.jpg");
+		ImageIcon icon2 = new ImageIcon("P2.jpg");
+		ImageIcon icon3 = new ImageIcon("F2.jpg");
+
+		s.setIcon(icon1);
+		r.setIcon(icon2);
+		p.setIcon(icon3);
+		
+		FlowLayout flow = new FlowLayout();
+		f.setLayout(flow);
+		
+		f.add(s);
+		f.add(r);
+		f.add(p);
+		
+		Game game = new Game();
+		s.addActionListener(game);
+		r.addActionListener(game);
+		p.addActionListener(game);
+		
+		f.setVisible(true);						
+	}
+	
+	public static void main(String[] args) {
+		Game game = new Game();				
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Random random = new Random();
+		int computer = random.nextInt(3);
+		//0:가위, 1:바위, 2:보
+		
+		if(e.getSource() == s) { //내가 가위
+			if(computer == 0) {//컴퓨터가 가위
+				f.setTitle("비겼음");
+			}
+			if(computer == 1) {//컴퓨터가 바위
+				f.setTitle("컴퓨터 승");
+			}
+			if(computer == 2) {//컴퓨터가 보
+				f.setTitle("내가 승");
+			}
+		}
+		if(e.getSource() == r) { //내가 바위
+			if(computer == 0) {//컴퓨터가 가위
+				f.setTitle("내가 승");
+			}
+			if(computer == 1) {//컴퓨터가 바위
+				f.setTitle("비겼음");
+			}
+			if(computer == 2) {//컴퓨터가 보
+				f.setTitle("컴퓨터 승");
+			}
+			
+		}
+		if(e.getSource() == p) { //내가 보
+			if(computer == 0) {//컴퓨터가 가위
+				f.setTitle("컴퓨터 승");
+			}
+			if(computer == 1) {//컴퓨터가 바위
+				f.setTitle("내가 승");
+			}
+			if(computer == 2) {//컴퓨터가 보
+				f.setTitle("비겼음");
+			}
+			
+		}
+	
+		
+	}
+
+}
+package window;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class MainClass implements ActionListener {
+	
+	static JLabel me;
+	static JButton b1, b2, b3, b4;
+	
+		
+		
+	public static void main(String[] args) {
+	
+		JFrame f = new JFrame();
+		f.setTitle("나의 그래픽 프로그램");
+		f.setSize(260, 300);
+		
+		me = new JLabel("김의 그래픽");
+		b1 = new JButton("<<<<<나의 계산기>>>>>");
+		b2 = new JButton("<<<<<나의 이미지>>>>>");
+		b3 = new JButton("<<<<<나의 이미지 변신>>>>>");
+		b4 = new JButton("<<<<<나의 가위바위보 게임>>>>>");
+		
+		FlowLayout flow = new FlowLayout();
+		f.setLayout(flow);
+		
+		f.add(me);
+		f.add(b1);
+		f.add(b2);
+		f.add(b3);
+		f.add(b4);
+		
+		MainClass main = new MainClass();
+		b1.addActionListener(main);
+		b2.addActionListener(main);
+		b3.addActionListener(main);
+		b4.addActionListener(main);
+				
+		
+		f.setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == b1) {
+			MyCalculate cal = new MyCalculate();
+		}
+		if(e.getSource() == b2) {
+			Mypicture pic1 = new Mypicture();
+		}
+		if(e.getSource() == b3) {
+			Mypicture2 pic2 = new Mypicture2();
+			
+		}
+		if(e.getSource() == b4) {
+			//Game game = new Game();
+			
+		}
+		
+	}
+
+	
+	
+
+}
+
+-Day 5-------------------------------------------------------------------------------------------------
+
+새폴더 만들고 workspace에서 지정해주고
+(control n) java project
+(control n) pac
+(control n) class ---> 할때 public static void main에 체크해줘야 함
+이름은 처음글자는 대문자가 되어야 함
+
+//컨트롤+스페이스바. => 자동완성기능임
+System.out.println("test");
+//컨트롤+f11 => 실행기능임
+//컨트롤 + 화면 커짐
+//컨트롤 shift f 
+
+데이타저장 방법
+기초형-정수(int), 실수(double), char, boolean => 값
+나머지는 참조형 : 배열, 클래스,...... => 주소가 들어간다
+
+저장하는 단축키는 control s
+
+control art 화살표하면 복사됨 , art만하고 이동하면 이동됨
+for문은 반복되므로 ; 으로 끝나지 않고 무엇을 반복할지를 { } 안에 작성해 줘야함
+system.out.println(); 하면 엔터키와 같은 효과
+system.out.print 하면(ln을 빼면) 옆으로 나옴 
+
+완전히 새로하고 싶으면 
+폴더하나 만들고 file에서 swith workplace로 가서 폴더 바꾸고 새로 시작하면됨
+
+Git에 올리기
+
+자바는 부품조립식 4000개가 있다.
+부품조립식(객체지향형프로그래맹) 
+OOP
+
+객체 만들기(틀=> class)
+ --> 강아지 만들기
+1. 특징을 찾으세요
+2. 정적특징(상태) : 꼬리가 있음. 다리갯수
+   동적특징(동작) : 짓다, 꼬리를 흔들다
+
+main 안에 main은 못쓴다. 메소드안에 메소드를 못씀
+메소드는 함수라는 뜻
+
+ 
+메소드 형식
+public 반환타입 메소드이름(입력값){
+  처리내용....
+}
+반환이 없을수도 있다. => void
+반환이 있을수도 있다. => String, int, ....
+
+
+int inupt = sc.nextInt(); 
+nextInt라는 메소도는 리턴(반환)이 있는애다
+반환을 int로 하라는 뜻
+void는 반환을 안하는 애
+
+1. Myshop3에서
+   두수를 입력받아서
+
+2. Cal2 메소드를 만들 것.
+     myCal(int x, int y){
+    return  x + y + 100
+     }
+
+3. 계산결과에 *100 을 곱해서 프린트
+
+--  Day6 ----------------------------------------------------------------------------------------
+
+
+새폴더 만들고 workspace에서 지정해주고
+(control n) java project
+(control n) pac
+(control n) class ---> 할때 public static void main에 체크해줘야 함
+이름은 처음글자는 대문자가 되어야 함
+
+//컨트롤+스페이스바. => 자동완성기능임
+System.out.println("test");
+//컨트롤+f11 => 실행기능임
+//컨트롤 + 화면 커짐
+//컨트롤 shift f 
+
+데이타저장 방법
+기초형-정수(int), 실수(double), char, boolean => 값
+나머지는 참조형 : 배열, 클래스,...... => 주소가 들어간다
+
+저장하는 단축키는 control s
+
+control art 화살표하면 복사됨 , art만하고 이동하면 이동됨
+for문은 반복되므로 ; 으로 끝나지 않고 무엇을 반복할지를 { } 안에 작성해 줘야함
+system.out.println(); 하면 엔터키와 같은 효과
+system.out.print 하면(ln을 빼면) 옆으로 나옴 
+
+
+1. 내가 만든다 => class
+2. 산다(원형 -> 복사)  => nw
+3. 상속 => 재사용  재정의 (overwrite -> 
+
+일반적으로 package는 소문자, java 파일은 대문자로 만든다
+
+
+
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
