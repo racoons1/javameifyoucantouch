@@ -22,7 +22,7 @@ public class DiaryMain extends JFrame {
 		getContentPane().setBackground(Color.GREEN);
 		// 컨트롤+시프트+f(자동정리)
 		setTitle("나의 일기장 시작화면");
-		setSize(560, 800);
+		setSize(500, 800);
 
 		FlowLayout flow = new FlowLayout();
 		getContentPane().setLayout(flow);
@@ -66,6 +66,9 @@ public class DiaryMain extends JFrame {
 
 				if ((sId.equals(gId)) && (sPw.equals(gPw))) {
 					JOptionPane.showMessageDialog(null, "로그인 OK입니다.");
+					MyDiary my = new MyDiary();
+					
+					
 				} else {
 					JOptionPane.showMessageDialog(null, "로그인 불가 입니다. 재입력 해주세요");
 				}
